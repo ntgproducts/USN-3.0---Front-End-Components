@@ -1,0 +1,9 @@
+.navigation ul {
+  padding: 0;
+  margin: 0;
+}
+.navigation ul li {
+  color: #f00;
+  padding: 0;
+  list-style: none;
+}

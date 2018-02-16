@@ -21,7 +21,7 @@ Command requires yarn which can be installed by using npm (npm install yarn). Ta
 Kicks off the development server and environment for creating the front end components 
 
 ### Front End Tech
-- React
+- React (React Router, JSX)
 - Stylus
 - PostCSS
 - Styled Components
