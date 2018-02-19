@@ -6,7 +6,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const config = {
   context: __dirname,
   entry: [
-    './js/entry/clientApp'
+    './js/entry/clientApp',
+    './style/main.styl'
   ],
   devtool: 'cheap-eval-source-map',
   output: {
@@ -16,8 +17,11 @@ const config = {
   },
   devServer: {
     hot: true,
+    // always starts with a / where the static files are served
     publicPath: '/dist/',
-    historyApiFallback: true
+    historyApiFallback: true,
+    // tell the dev server where to serve static content from
+    // contentBase: path.join(__dirname, 'dist')
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.styl'],
@@ -45,16 +49,19 @@ const config = {
       },
       {
         test: /\.styl$/,
-        use: ExtractTextPlugin.extract(['css-loader', 'stylus-loader'])
-      },
-      {
-        test: /\.css$/,
-        exclude: /node_modules/,
         use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
-          use: "css-loader"
+          fallback: 'style-loader', 
+          use: ['css-loader', 'stylus-loader']
         })
-      }
+      },
+      // {
+      //   test: /\.css$/,
+      //   exclude: /node_modules/,
+      //   use: ExtractTextPlugin.extract({
+      //     fallback: "style-loader",
+      //     use: "css-loader"
+      //   })
+      // }
     ],
   }
 };
