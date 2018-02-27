@@ -1,7 +1,9 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
-import Nav from '../components/navigation';
-// import type { Match } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { Route, Switch } from 'react-router-dom';
+import MainAppLanding from '../pages/Main';
+import Calculators from '../components/Calculators';
+import Nav from '../components/Navigation';
 
 const NoMatch = ({ location }) => (
   <div>
@@ -12,13 +14,26 @@ const NoMatch = ({ location }) => (
   </div>
 );
 
+NoMatch.propTypes = {
+  location: PropTypes.string
+};
+NoMatch.defaultProps = {
+  location: 'unknown'
+}
+
+// TODO: Needs Proptypes to continue dev on the router
+// TODO: Move the ideas from the React Course from FEM 
+// Make sure that the 404 NoMatch Component comes last
+// Switch makes it so that there is only one route running at a time
 const App = () => (
-
   <div className="app">
-    <Route exact path="/" component={Nav} />
-    <Route component={NoMatch} />
+    <Nav />
+    <Switch>
+      <Route exact path="/" component={MainAppLanding} />
+      <Route exact path="/calculator" component={Calculators} />
+      <Route component={NoMatch} />
+    </Switch>
   </div>
-
 );
 
 export default App;

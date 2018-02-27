@@ -5,8 +5,14 @@ import '../../style/nav.styl';
 const Nav = () => (
 
   <div className="navigation">
-    <ul>
-      <li><Link href="/something" to="/something">Something Else</Link></li>
+    <ul className="brand">
+      <li><Link href="/" to="/">US Netting</Link></li>
+    </ul>
+    <ul className="navigation-links">
+      <li><a href="/example">Some Example</a></li>
+      <li><a href="/example">Some Example</a></li>
+      <li><a href="/example">Some Example</a></li>
+      <li><a href="/example">Some Example</a></li>
     </ul>
   </div>
 

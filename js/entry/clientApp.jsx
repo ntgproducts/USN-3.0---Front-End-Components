@@ -11,6 +11,7 @@ const renderApp = () => {
     document.getElementById('root')
   );
 };
+
 // Render the main app with router
 renderApp();
 
