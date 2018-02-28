@@ -9,7 +9,7 @@ const config = {
     './js/entry/clientApp',
     './style/main.styl'
   ],
-  devtool: 'cheap-eval-source-map',
+  devtool: process.env.NODE_ENV === 'development' ? 'cheap-eval-source-map' : false,
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -35,7 +35,10 @@ const config = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-    new ExtractTextPlugin("style/site.css")
+    new ExtractTextPlugin({
+      filename: "style/[name].[contentHash].css",
+      disable: process.env.NODE_ENV !== 'production'
+    })
   ],
   module: {
     rules: [
@@ -43,6 +46,7 @@ const config = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
+        include: path.resolve('js'),
         use: {
           loader: 'babel-loader'
         }
@@ -53,15 +57,7 @@ const config = {
           fallback: 'style-loader', 
           use: ['css-loader', 'stylus-loader']
         })
-      },
-      // {
-      //   test: /\.css$/,
-      //   exclude: /node_modules/,
-      //   use: ExtractTextPlugin.extract({
-      //     fallback: "style-loader",
-      //     use: "css-loader"
-      //   })
-      // }
+      }
     ],
   }
 };

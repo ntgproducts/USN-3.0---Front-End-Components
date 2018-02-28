@@ -9,20 +9,16 @@ class MainAppLanding extends React.Component {
   render(){
     return (
       <div>
-        <h1>Component Example List</h1>
-        <Link to="/calculator" href="/calculator">Calculator Styles</Link>
+        <h1>Components Available List</h1>
+        <Link to="/calculators" href="/calculators">Calculator Styles</Link>
       </div>
     )
   }
 }
 
-MainAppLanding.defaultProps = {
+MainAppLanding.defaultProps = {};
 
-};
-
-MainAppLanding.propTypes = {
-
-};
+MainAppLanding.propTypes = {};
 
 
 export default MainAppLanding;

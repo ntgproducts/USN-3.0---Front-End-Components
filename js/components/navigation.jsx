@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../../style/nav.styl';
 
 const Nav = () => (
 
@@ -9,10 +8,10 @@ const Nav = () => (
       <li><Link href="/" to="/">US Netting</Link></li>
     </ul>
     <ul className="navigation-links">
-      <li><a href="/example">Some Example</a></li>
-      <li><a href="/example">Some Example</a></li>
-      <li><a href="/example">Some Example</a></li>
-      <li><a href="/example">Some Example</a></li>
+      <li><a href="/example">Another Example</a></li>
+      <li><a href="/example">Next Example</a></li>
+      <li><a href="/example">Example</a></li>
+      <li><a href="/example">Contact</a></li>
     </ul>
   </div>
 

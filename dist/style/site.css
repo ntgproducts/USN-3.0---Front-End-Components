@@ -1,9 +1,26 @@
-.navigation ul {
-  padding: 0;
-  margin: 0;
+.lvl1 {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
-.navigation ul li {
-  color: #f00;
+.lvl2 {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.lvl3 {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.lvl4 {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.lvl5 {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.3), 0 15px 12px rgba(0,0,0,0.22);
+}
+body {
+  margin: 0;
   padding: 0;
-  list-style: none;
+  color: #212121;
+  font-family: 'Droid Sans', Arial, sans-serif;
+}
+::-moz-selection,
+::selection {
+  background: #0d47a1;
+  color: #fff;
 }

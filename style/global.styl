@@ -1,2 +1,117 @@
+// Global Stylus Vars USN3.0
+
+// Base Colors
 $black = #000;
-$red = #c00;
+$subtle-black = #212121;
+
+// Brand Colors
+$primary = #0d47a1;
+$secondary = #01579b;
+$accent = #245682;
+
+// Grays
+$white = #fff;
+$off-white = #fafafa;
+
+// Grays
+$gray = #eee;
+
+// Primary
+$red = #c62828;
+$yellow = #ebef00;
+$blue = $primary;
+
+$green = #43a047;
+$dark-green = #1b5e20;
+$orange = #bf360c;
+
+
+
+// System Colors
+$error = $red;
+$alert-error = $red;
+$success = $green;
+$warning = $yellow;
+
+
+// Stylistic Variables
+$border-radius = 2px;
+
+// Typography
+// Font Size and Flow
+$base-font-size = 100%;
+$font-size-base = 16px;
+$font-xl = 2em;
+$font-lg = 1.625em;
+$font-md = 1.4em;
+$font-sm = 1.25em;
+$font-reg = 1em;
+
+// Font Faces
+// TODO: Cleanup these fonts
+$primary-face = 'Droid Sans', Arial, sans-serif;
+$secondary-face = 'Roboto', sans-serif;
+$logofont = 'Audiowide';
+$ubuntubold = 'ubuntubold', Arial, sans-serif;
+$ubuntumedium = 'ubuntumedium', Arial, sans-serif;
+$oswaldlight = 'oswaldlight', 'Oswald', sans-serif;
+$oswald = 'Oswald', sans-serif;
+$oswaldmedium = 'oswaldmedium', Arial, sans-serif;
+$font-family-sans-serif = $primary-face;
+$primary-font = $primary-face;
+
+// Typographic Colors
+$body-font = $subtle-black;
+$error-text = $error;
+$warning-text = $warning;
+$success-text = $success;
+$ghost = $gray;
+
+// Begin Material Design Mixins For Clean Shadows 
+// Levels create larger shadows as the number increments
+md-lvl-1() {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+md-lvl-2() {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+md-lvl-3() {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+md-lvl-4() {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+md-lvl-5() {
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.lvl1 {
+  md-lvl-1();
+}
+
+.lvl2 {
+  md-lvl-2();
+}
+
+.lvl3 {
+  md-lvl-3();
+}
+
+.lvl4 {
+  md-lvl-4();
+}
+
+.lvl5 {
+  md-lvl-5();
+}
+
+// Breakpoints
+// TODO: Review the optimal breakpoints
+$mobile = 480px;
+$tablet = 768px;
+$desktop = 960px;
+$xl = 1240px;

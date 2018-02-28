@@ -16,6 +16,7 @@ const CalcSquareFoot = props => {
   } = props;
   return (
     <div>
+      <h2>Square Foot Calculator</h2>
       <form onSubmit={handleSubmit}>
         <h5>Product Length</h5>
         <label htmlFor="LengthFeet">Feet
@@ -89,10 +90,10 @@ const CalcSquareFoot = props => {
 };
 
 CalcSquareFoot.propTypes = {
-  values: PropTypes.string,
-  errors: PropTypes.string,
-  touched: PropTypes.bool,
-  isSubmitting: PropTypes.func,
+  values: PropTypes.objectOf(PropTypes.string),
+  errors: PropTypes.objectOf(PropTypes.string),
+  touched: PropTypes.objectOf(PropTypes.bool),
+  isSubmitting: PropTypes.bool,
   handleChange: PropTypes.func,
   handleBlur: PropTypes.func,
   handleSubmit: PropTypes.func
@@ -102,7 +103,7 @@ CalcSquareFoot.defaultProps = {
   values: '',
   errors: '',
   touched: false,
-  isSubmitting: () => {},
+  isSubmitting: false,
   handleChange: () => {},
   handleSubmit: () => {},
   handleBlur: () => {}

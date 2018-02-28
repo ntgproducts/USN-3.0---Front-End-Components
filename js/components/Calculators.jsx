@@ -9,7 +9,7 @@ class Calculators extends React.Component {
   render() {
     return (
       <div>
-        <h1>Calculators</h1>
+        <h1>Types of Calculators</h1>
         <EnhancedCalc />
       </div>
     )
