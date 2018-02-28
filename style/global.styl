@@ -25,6 +25,8 @@ $green = #43a047;
 $dark-green = #1b5e20;
 $orange = #bf360c;
 
+$primary-gradient = linear-gradient(160deg, #121ab8 0%, #4a70c0 100%);
+
 
 
 // System Colors
@@ -35,23 +37,23 @@ $warning = $yellow;
 
 
 // Stylistic Variables
-$border-radius = 2px;
+$border-radius = 0.3rem;
 
 // Typography
 // Font Size and Flow
 $base-font-size = 100%;
 $font-size-base = 16px;
+$font-xxl = 3.2em;
 $font-xl = 2em;
 $font-lg = 1.625em;
-$font-md = 1.4em;
-$font-sm = 1.25em;
-$font-reg = 1em;
+$font-md = 1.25em;
+$font-sm = 1em;
+$font-xs = .8em;
 
 // Font Faces
 // TODO: Cleanup these fonts
-$primary-face = 'Droid Sans', Arial, sans-serif;
-$secondary-face = 'Roboto', sans-serif;
-$logofont = 'Audiowide';
+$primary-face = $ubuntumedium;
+$logofont = 'Audiowide', 'Helvetica', Arial, sans-serif;
 $ubuntubold = 'ubuntubold', Arial, sans-serif;
 $ubuntumedium = 'ubuntumedium', Arial, sans-serif;
 $oswaldlight = 'oswaldlight', 'Oswald', sans-serif;
@@ -66,6 +68,10 @@ $error-text = $error;
 $warning-text = $warning;
 $success-text = $success;
 $ghost = $gray;
+
+// Padding Utilities
+$padding = 10px;
+$spacer = 1em 0;
 
 // Begin Material Design Mixins For Clean Shadows 
 // Levels create larger shadows as the number increments
@@ -115,3 +121,7 @@ $mobile = 480px;
 $tablet = 768px;
 $desktop = 960px;
 $xl = 1240px;
+
+.sr-only {
+  display: none;  
+}

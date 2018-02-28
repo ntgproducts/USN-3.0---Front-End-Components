@@ -5,6 +5,7 @@ import { Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import AsyncRoute from '../utils/AsyncRoute';
 import store from '../store';
+import Nav from '../components/Navigation';
 
 const NoMatch = ({ location }) => (
   <div>
@@ -27,6 +28,7 @@ NoMatch.defaultProps = {
 const App = () => (
   <Provider store={store}>
     <div className="app">
+      <Nav />
       <Route exact path="/"
         component={ props => 
         <AsyncRoute props={props} loadingPromise={ import('../pages/Main') } />} />

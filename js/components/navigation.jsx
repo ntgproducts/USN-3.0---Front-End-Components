@@ -5,7 +5,12 @@ const Nav = () => (
 
   <div className="navigation">
     <ul className="brand">
-      <li><Link href="/" to="/">US Netting</Link></li>
+      <li>
+        <Link href="/" to="/">
+          <img src="dist/img/system/white-logo-01.png" alt="US Netting"/>
+          <span className="sr-only">US Netting</span>
+        </Link>
+      </li>
     </ul>
     <ul className="navigation-links">
       <li><a href="/example">Another Example</a></li>

@@ -15,72 +15,95 @@ const CalcSquareFoot = props => {
     handleSubmit,
   } = props;
   return (
-    <div>
-      <h2>Square Foot Calculator</h2>
+    <div className="calculator calculator--square-foot">
+      <header>
+        <h2>Product Name - Square Foot Calculator</h2>
+      </header>
       <form onSubmit={handleSubmit}>
-        <h5>Product Length</h5>
-        <label htmlFor="LengthFeet">Feet
-        <input 
-          type="text" 
-          placeholder="Feet (ft.)" 
-          value={values.LengthFeet} 
-          onChange={handleChange} 
-          onBlur={handleBlur} 
-          name="LengthFeet" 
-          id="LengthFeet"
-          className={errors.LengthFeet && touched.LengthFeet ? 'text-input error' : 'text-input'}
-        />
-        </label>
-        {errors.LengthFeet &&
-          touched.LengthFeet && <div className="input-feedback">{errors.LengthFeet}</div>}
+        <h5 className="form-title calculator-form-title">Product Length</h5>
 
-        <label htmlFor="LengthInches">Inches
-          <input 
-            type="text" 
-            name="LengthInches" 
-            id="LengthInches"
-            placeholder="Inches (in.)"
-            value={values.LengthInches}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            className={errors.LengthInches && touched.LengthInches ? 'text-input error' : 'text-input'}
-          />
-        </label>
-        {errors.LengthInches &&
-          touched.LengthInches && <div className="input-feedback">{errors.LengthInches}</div>}
+        <div className="form-feedback">
+          {errors.LengthFeet &&
+            touched.LengthFeet && <div className="input-feedback">{errors.LengthFeet}</div>}
+            
+          {errors.LengthInches &&
+            touched.LengthInches && <div className="input-feedback">{errors.LengthInches}</div>}
 
-        <h5>Product Width</h5>
-        <label htmlFor="WidthFeet">Feet
-        <input
-            type="text"
-            placeholder="Feet (ft.)"
-            value={values.WidthFeet}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            name="WidthFeet"
-            id="WidthFeet"
-            className={errors.WidthFeet && touched.WidthFeet ? 'text-input error' : 'text-input'}
-          />
-        </label>
-        {errors.WidthFeet &&
-          touched.WidthFeet && <div className="input-feedback">{errors.WidthFeet}</div>}
+        </div>
 
-        <label htmlFor="WidthInches">Inches
-          <input
-            type="text"
-            name="WidthInches"
-            id="WidthInches"
-            placeholder="Inches (in.)"
-            value={values.WidthInches}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            className={errors.WidthInches && touched.WidthInches ? 'text-input error' : 'text-input'}
-          />
-        </label>
-        {errors.WidthInches &&
-          touched.WidthInches && <div className="input-feedback">{errors.WidthInches}</div>}
+        <div className="row">
+          <div className="column column-50">
+            <label className="form-label" htmlFor="LengthFeet"><span className="sr-only">Feet:</span>
+              <input
+                type="text"
+                placeholder="Feet (ft.)"
+                value={values.LengthFeet}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                name="LengthFeet"
+                id="LengthFeet"
+                className={errors.LengthFeet && touched.LengthFeet ? 'text-input error' : 'text-input'}
+              />
+            </label>
+            </div>
+          <div className="column column-50">
+            <label className="form-label" htmlFor="LengthInches"><span className="sr-only">Inches:</span>
+              <input
+                type="text"
+                name="LengthInches"
+                id="LengthInches"
+                placeholder="Inches (in.)"
+                value={values.LengthInches}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={errors.LengthInches && touched.LengthInches ? 'text-input error' : 'text-input'}
+              />
+            </label>
+            </div>
+        </div>
+        
+        <h5 className="form-title calculator-form-title">Product Width</h5>
+        
+        <div className="form-feedback">
+          {errors.WidthFeet &&
+            touched.WidthFeet && <div className="input-feedback">{errors.WidthFeet}</div>}
 
-        <button type="submit" disabled={isSubmitting}>
+          {errors.WidthInches &&
+            touched.WidthInches && <div className="input-feedback">{errors.WidthInches}</div>}
+        </div>
+
+        <div className="row">
+          <div className="column column-50">
+            <label className="form-label" htmlFor="WidthFeet"><span className="sr-only">Feet:</span>
+              <input
+                type="text"
+                placeholder="Feet (ft.)"
+                value={values.WidthFeet}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                name="WidthFeet"
+                id="WidthFeet"
+                className={errors.WidthFeet && touched.WidthFeet ? 'text-input error' : 'text-input'}
+              />
+            </label>
+            </div>
+          <div className="column column-50">
+            <label className="form-label" htmlFor="WidthInches"><span className="sr-only">Inches:</span>
+              <input
+                type="text"
+                name="WidthInches"
+                id="WidthInches"
+                placeholder="Inches (in.)"
+                value={values.WidthInches}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={errors.WidthInches && touched.WidthInches ? 'text-input error' : 'text-input'}
+              />
+            </label>
+          </div>
+        </div>      
+
+        <button className="btn btn-gradient btn-block" type="submit" disabled={isSubmitting}>
           Submit
         </button>
 
@@ -132,7 +155,6 @@ const EnhancedCalc = withFormik({
   }),
   handleSubmit: (values, { setSubmitting }) => {
     setTimeout(() => {
-      // alert(JSON.stringify(values, null, 2));
 
       setSubmitting(false);
     }, 1000);
