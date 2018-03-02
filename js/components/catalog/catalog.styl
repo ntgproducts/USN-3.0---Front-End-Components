@@ -1,0 +1,43 @@
+@require ('../../../style/global.styl');
+
+.product-grid {
+  transition: all .4s ease;
+}
+.product {
+  &.product-card {
+    border: 1px solid $gray;
+    padding: $padding;
+    position: relative;
+    h1,h2,h3,h4,h5,h6,p {
+      font-size: $font-xs;
+      margin: 0;
+      padding: 0;
+    }
+    h3, .product-title{
+      color: $primary;
+      font-weight: bold;
+      font-size: $font-sm;
+      letter-spacing: .1rem;
+      text-decoration: underline;
+      margin-bottom: .3rem;
+    }
+    .btn {
+      position: absolute;
+      bottom: $padding;
+      right: $padding;
+    }
+  }
+}
+
+.sidebar-container{
+  .sidebar {
+    padding: $padding;
+  }  
+}
+.filter-sidebar {
+  ul {
+    margin-top: 0;
+    padding-top: 0;
+  }  
+  
+}

@@ -9,6 +9,18 @@
   header {
     margin: 0;
     padding: 0;
+    &.header-filled{
+      background: $primary;
+      margin-left: -10px;
+      margin-right: -10px;
+      margin-top: -10px;
+      margin-bottom: $padding;
+      h1,h2,h3,h4,h5,h6 {
+        color: $white;
+        font-size: $font-lg;
+        padding: $padding;
+      }  
+    }
     h1,h2,h3,h4,h5,h6 {
       color: $subtle-black;
       margin: 0;

@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import React from 'react';
+import SubNav from '../components/SubNavigation';
 
 class MainAppLanding extends React.Component {
   constructor(props){
@@ -8,9 +8,10 @@ class MainAppLanding extends React.Component {
   }
   render(){
     return (
-      <div>
-        <h1>Components Available List</h1>
-        <Link to="/calculators" href="/calculators">Calculator Styles</Link>
+      <div className="container">
+        <h1>Main Component List</h1>
+        <h3>Sub Navigation Bar</h3>
+        <SubNav />        
       </div>
     )
   }

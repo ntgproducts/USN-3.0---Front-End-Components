@@ -11,8 +11,7 @@ class Calculators extends React.Component {
   
   render() {
     return (
-      <div className="calculator-container">
-        <h1>Calculators</h1>
+      <div className="container calculator-container">
         <EnhancedCalc />
       </div>
     )

@@ -11,7 +11,10 @@ class AsyncRoute extends Component {
   componentDidMount() {
     this.props.loadingPromise.then(module => {
       this.component = module.default;
-      this.setState({ loaded: true });
+      // For testing the loading gif
+      // setTimeout(() => {
+        this.setState({ loaded: true });
+      // }, 4000)
     });
   }
   component = null;

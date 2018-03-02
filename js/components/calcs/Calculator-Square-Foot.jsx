@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { withFormik } from 'formik';
 import Yup from 'yup';
 // import DisplayFormikState from '../../utils/FormikState';
+// TODO: Controls can be unlocked and Components should be conditionally loaded based on 
+// TODO: The product list and boolean flags that are available on the product. 
 
 const CalcSquareFoot = props => {
   const {
@@ -16,19 +18,16 @@ const CalcSquareFoot = props => {
   } = props;
   return (
     <div className="calculator calculator--square-foot">
-      <header>
+      <header className="header-filled">
         <h2>Product Name - Square Foot Calculator</h2>
       </header>
       <form onSubmit={handleSubmit}>
         <h5 className="form-title calculator-form-title">Product Length</h5>
-
         <div className="form-feedback">
           {errors.LengthFeet &&
             touched.LengthFeet && <div className="input-feedback">{errors.LengthFeet}</div>}
-            
           {errors.LengthInches &&
             touched.LengthInches && <div className="input-feedback">{errors.LengthInches}</div>}
-
         </div>
 
         <div className="row">
