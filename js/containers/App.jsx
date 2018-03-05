@@ -27,18 +27,20 @@ NoMatch.defaultProps = {
 
 const App = () => (
   <Provider store={store}>
-    <div className="app">
-      <Nav isSticky={false} navStyle="default" isMobile={false} />
-      <Route exact path="/"
-        component={ props => 
-        <AsyncRoute props={props} loadingPromise={ import('../pages/Main') } />} />
-      <Route exact path="/calculators" component={ props => 
-        <AsyncRoute props={props} loadingPromise={ import('../components/Calculators') } /> } />
-      <Route exact path="/catalog" component={props =>
-        <AsyncRoute props={props} loadingPromise={import('./Catalog')} />} />
-      <Route exact path="/search" component={props =>
-        <AsyncRoute props={props} loadingPromise={import('./Search')} />} />
-    </div>
+      <div className="app">
+        <Nav isSticky={false} navStyle="default" isMobile={false} />
+        <Route exact path="/"
+          component={props =>
+            <AsyncRoute props={props} loadingPromise={import('../pages/Main')} />} />
+        <Route exact path="/calculators" component={props =>
+          <AsyncRoute props={props} loadingPromise={import('../components/Calculators')} />} />
+        <Route exact path="/catalog" component={props =>
+          <AsyncRoute props={props} loadingPromise={import('./Catalog')} />} />
+        <Route exact path="/search" component={props =>
+          <AsyncRoute props={props} loadingPromise={import('./Search')} />} />
+        <Route exact path="/category-boxes" component={props =>
+          <AsyncRoute props={props} loadingPromise={import('./Category')} />} />
+      </div>
   </Provider>
 );
 

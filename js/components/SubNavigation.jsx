@@ -8,10 +8,9 @@ const SubNav = () => (
     <ul className="navigation-links">
       <li><Link className="fancy-underline fancy-underline-blue" to="/calculators" href="/calculators">Calculator Example</Link></li>
       <li><Link className="fancy-underline fancy-underline-blue" to="/catalog" href="/catalog">Catalog Example</Link></li>
-      <li><Link to="/example" className="fancy-underline fancy-underline-blue" href="/example">Example</Link></li>
-      <li><Link to="/example" className="fancy-underline fancy-underline-blue" href="/example">Contact</Link></li>
+      <li><Link className="fancy-underline fancy-underline-blue" to="/search" href="/search">Search Page</Link></li>
+      <li><Link className="fancy-underline fancy-underline-blue" to="/category-boxes" href="/category-boxes">Category Boxes</Link></li>
     </ul>
-
   </div>
 
 );

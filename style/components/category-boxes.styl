@@ -1,0 +1,135 @@
+.stack-row {
+  .tile-bg {
+    position: relative;
+    object-fit: cover;
+
+    img {
+      width: 100%;
+      height: auto;
+      /* Preserve aspet ratio */
+      min-width: 100%;
+      min-height: 100%;
+    }
+
+    .tile-title-box {
+      background: $primary;
+      color: $white;
+      position: absolute;
+      padding: 1em;
+      width: 53%;
+
+      &.bottom-cap {
+        bottom: 10%;
+      }
+
+      &.right-cap {
+        right: 0;
+      }
+
+      &.left-cap {
+        left: 0;
+      }
+
+      &.top-cap {
+        top: 10%;
+      }
+
+      h1, h2, h3, h4, h5, h6, p, a {
+        color: $white;
+      }
+
+      h1, h2 {
+        font-family: $oswald;
+        text-transform: uppercase;
+        line-height: 1.1em;
+      }
+
+      h1 {
+        font-size: 2.3em;
+        margin-bottom: 0;
+      }
+
+      h2 {
+        margin-top: 0.3em;
+        font-size: 1.7em;
+      }
+
+      p {
+        line-height: 1.64em;
+      }
+
+      a.btn {
+        text-transform: uppercase;
+        background: $white;
+        color: $primary;
+        border-radius: 0px;
+        padding: 0.5em 1.6em;
+        display: inline-block;
+        font-weight: 600;
+        margin-top: 12px;
+      }
+
+      .left {
+        float: left;
+      }
+
+      .right {
+        float: right;
+      }
+
+      // +below($mobile) {
+      //   clear: both;
+      //   position: relative;
+      //   width: 100%;
+      //   bottom: 0;
+      //   float: none;
+      //   height: 100%;
+
+      //   .left, .right {
+      //     float: none;
+      //   }
+      // }
+    }
+  }
+}
+
+.image-list {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background: darken($primary, 20%);
+    overflow: hidden;
+
+    &:nth-child(odd) {
+      background: darken($primary, 40%);
+    }
+
+    border-bottom: 1px solid $primary;
+
+    a {
+      img {
+        margin-right: 12px;
+        float: left;
+        width: 20.5%;
+      }
+      vertical-align: middle;
+      display: block;
+      clear: both;
+      overflow: hidden; 
+      font-size: $font-xs;
+      color: $white;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+
+  // +below($mobile) {
+  //   padding: 0 8px;
+  // }
+}
+
