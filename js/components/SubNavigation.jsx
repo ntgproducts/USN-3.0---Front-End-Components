@@ -10,6 +10,7 @@ const SubNav = () => (
       <li><Link className="fancy-underline fancy-underline-blue" to="/catalog" href="/catalog">Catalog Example</Link></li>
       <li><Link className="fancy-underline fancy-underline-blue" to="/search" href="/search">Search Page</Link></li>
       <li><Link className="fancy-underline fancy-underline-blue" to="/category-boxes" href="/category-boxes">Category Boxes</Link></li>
+      <li><Link className="fancy-underline fancy-underline-blue" to="/product-example" href="/product-example">Product Example</Link></li>
     </ul>
   </div>
 

@@ -30,8 +30,7 @@ const App = () => (
       <div className="app">
         <Nav isSticky={false} navStyle="default" isMobile={false} />
         <Route exact path="/"
-          component={props =>
-            <AsyncRoute props={props} loadingPromise={import('../pages/Main')} />} />
+          component={props => <AsyncRoute props={props} loadingPromise={import('../pages/Main')} />} />
         <Route exact path="/calculators" component={props =>
           <AsyncRoute props={props} loadingPromise={import('../components/Calculators')} />} />
         <Route exact path="/catalog" component={props =>
@@ -40,6 +39,8 @@ const App = () => (
           <AsyncRoute props={props} loadingPromise={import('./Search')} />} />
         <Route exact path="/category-boxes" component={props =>
           <AsyncRoute props={props} loadingPromise={import('./Category')} />} />
+        <Route exact path="/product-example" component={props =>
+          <AsyncRoute props={props} loadingPromise={import('./Product')} />} />
       </div>
   </Provider>
 );
