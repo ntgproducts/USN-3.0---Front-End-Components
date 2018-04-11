@@ -1,5 +1,6 @@
 // Navigation Bar Styles
 .navigation {
+  position: relative;
   ul {
     display: inline-block;
     margin: 0;
@@ -25,15 +26,38 @@
       padding: 0;
     }
   }
+  
   .navigation-links {
     // TODO: If larger than 900px or the medium query then 
-    
     padding-top: $padding;
+    &.toggle-navigation-links {
+      .navigation-link-toggle {
+        &.active{
+          background:  darken($primary, 20%);
+          display: block;
+        }
+      } 
+      ul {
+        display: block;
+        width: 100%;
+        li {
+          display: block;
+          width: 100%;
+          float: none;
+        }
+      }
+    }
 
   }
   &.main-navigation {
     background: $primary;
     
+    .mega-menu {
+      .navigation-links {
+        float: none;
+      }
+    }
+
     .navigation-links {
       float: right;
       a{
@@ -54,3 +78,32 @@
 .navigation-container {
   max-width: 116rem;  
 }
+
+.mega-menu {
+  position: absolute;
+  z-index: 9999;
+  width: 100%;
+  background: darken($primary, 20%);
+  right: 0;
+  left: 0;
+  padding: 1rem 2rem 5rem 2rem;
+
+  header {
+    padding-left: .6em;
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 1.5rem;
+      color: $white;
+      margin-bottom: 0;
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    float: none;
+    li{
+      display: block;
+    }
+  }
+}
+ 

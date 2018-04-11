@@ -17,9 +17,9 @@ const Nav = () => (
           </li>
         </ul>
 
-        <ul className="navigation-links mobile-navigation-links mobile-navigation-links-toggle">
+        <ul className="navigation-links toggle-navigation-links active">
           <li>
-            <a href="#open">Menu</a>
+            <a className="navigation-link-toggle" href="#open">Menu</a>
           </li>
         </ul>
 
@@ -29,6 +29,48 @@ const Nav = () => (
           <li><a href="/example">Example</a></li>
           <li><a href="/example">Contact</a></li>
         </ul>
+      </div>
+      <div className="mega-menu">
+        <div className="mega-menu mega-menu-wrap">
+          <div className="container navigation-container">
+          <header>
+            <h4>Optional Header on the Mega Menu</h4>
+          </header>
+          <div className="row grid-row">
+            <div className="column column-4">
+              <ul className="navigation-links">
+                <li><a href="/example">Sub Another Example</a></li>
+                <li><a href="/example">Sub Next Example</a></li>
+                <li><a href="/example">Sub Example</a></li>
+                <li><a href="/example">Sub Contact</a></li>
+              </ul>
+            </div>
+            <div className="column column-4">
+              <ul className="navigation-links">
+                <li><a href="/example">Sub Another Example</a></li>
+                <li><a href="/example">Sub Next Example</a></li>
+                <li><a href="/example">Sub Example</a></li>
+                <li><a href="/example">Sub Contact</a></li>
+              </ul>
+            </div>
+            <div className="column column-4">
+              <ul className="navigation-links">
+                <li><a href="/example">Sub Another Example</a></li>
+                <li><a href="/example">Sub Next Example</a></li>
+                <li><a href="/example">Sub Example</a></li>
+                <li><a href="/example">Sub Contact</a></li>
+              </ul>
+            </div>
+            <div className="column column-4">
+              <ul className="navigation-links">
+                <li><a href="/example">Sub Another Example</a></li>
+                <li><a href="/example">Sub Next Example</a></li>
+                <li><a href="/example">Sub Example</a></li>
+                <li><a href="/example">Sub Contact</a></li>
+              </ul>
+            </div>
+          </div></div>
+        </div>
       </div>
     </div>
 );
