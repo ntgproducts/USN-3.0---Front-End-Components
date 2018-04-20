@@ -1,5 +1,11 @@
 # US Netting 3.0 Front End Components
----
+
+A playground for building out components and testing ideas around the USN3.0 front end. Beware that the eslint is strong and opinionated and you may need to use some eslint comments to turn features on and off via files. 
+
+The most common need (allow the use of console.log):
+``` /* eslint no-console: 0 */ ```
+
+
 
 ## Deps
 - Node v8.8.1 (use nvm)
