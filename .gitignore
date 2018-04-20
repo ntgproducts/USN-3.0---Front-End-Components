@@ -1,15 +1,29 @@
 node_modules/
-dist/bundle.js
-node_modules/
 .eslintcache
 coverage/
 .nyc_output
-.DS_Store
+
+# WebPack Generated Bundles
+dist/bundle.js
 dist/*bundle*
 *.map
 *.bundle.js
+
 _site/
 .sass-cache/
 *.iml
 .idea/
-node_modules
+*.logs
+yarn-debug.log*
+yarn-error.log*
+.npm
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
