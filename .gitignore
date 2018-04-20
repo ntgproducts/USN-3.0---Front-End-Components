@@ -1,4 +1,5 @@
 node_modules/
+node_modules
 .eslintcache
 coverage/
 .nyc_output
@@ -8,6 +9,7 @@ dist/bundle.js
 dist/*bundle*
 *.map
 *.bundle.js
+*.hot-update.js
 
 _site/
 .sass-cache/
