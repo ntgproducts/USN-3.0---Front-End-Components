@@ -2,7 +2,7 @@
 
 A playground for building out components and testing ideas around the USN3.0 front end. Beware that the eslint is strong and opinionated and you may need to use some eslint comments to turn features on and off via files. 
 
-The most common need (allow the use of console.log):
+The most common need (allow the use of console.log) place at *TOP* of file to enable console:
 ``` /* eslint no-console: 0 */ ```
 
 
