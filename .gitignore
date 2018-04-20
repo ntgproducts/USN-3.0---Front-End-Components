@@ -19,6 +19,8 @@ _site/
 yarn-debug.log*
 yarn-error.log*
 .npm
+flow-typed
+flow-typed/*
 
 # OS generated files #
 ######################
