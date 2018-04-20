@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@appbaseio/reactivesearch": "^2.2.3",
+    "airtable": "^0.5.3",
     "axios": "^0.18.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",

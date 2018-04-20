@@ -13,10 +13,10 @@ const spin = keyframes`
 `;
 
 const Image = styled.img`
-  animation: ${spin} 4s infinite linear;
+  animation: ${spin} 2s infinite linear;
   background-image: url(/dist/img/system/brandmark.png);
   background-repeact: no-repeat;
-  max-width: 250px;
+  max-width: 36px;
   margin: 5em auto;
   display: block;
 

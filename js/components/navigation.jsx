@@ -30,7 +30,7 @@ const Nav = () => (
           <li><a href="/example">Contact</a></li>
         </ul>
       </div>
-      <div className="mega-menu">
+      { /* <div className="mega-menu">
         <div className="mega-menu mega-menu-wrap">
           <div className="container navigation-container">
           <header>
@@ -71,7 +71,7 @@ const Nav = () => (
             </div>
           </div></div>
         </div>
-      </div>
+      </div> */}
     </div>
 );
 

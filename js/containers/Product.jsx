@@ -1,4 +1,7 @@
+/* eslint no-console: 0 */
 import React from 'react';
+import PropTypes from 'prop-types';
+import Airtable from 'airtable';
 import ImageGrid from '../components/product/ImageGrid';
 import EnhancedCalc from '../components/calcs/Calculator-Square-Foot';
 import TabLayout from '../components/product/TabLayout';
@@ -16,10 +19,42 @@ class Product extends React.Component {
     this.state = {};
   }
 
+  componentDidMount(){
+    const API_KEY = 'keyf9Afiu9gLkM61v';
+    const BASE_KEY = 'appevup1Wv8nTwJ1j';
+
+    const base = new Airtable({
+      apiKey: API_KEY
+    }).base(BASE_KEY);
+
+    base('Product Database').select({ filterByFormula: `Code = "${this.props.match.params.code}"`}).eachPage((records) => {
+      let product;
+      records.forEach((record) => {
+        product = {
+          code: record.get('Code'),
+          price: record.get('MSRP'),
+          description: record.get('Product Description'),
+          included: record.get('Included'),
+          slug: record.get('Slug')
+        };
+        
+      });
+      this.setState({product});
+    }, (err) => {
+      if(err) console.error(err);
+    });
+
+  }
+
+ 
+
   render() {
     return (
       <div className="product-container container">
         <div className="row">
+          {this.state.product && 
+            <h1>{this.state.product.code}</h1>
+          }
           <div className="column column-6">
             <ImageGrid media={data} />
           </div>
@@ -44,8 +79,16 @@ class Product extends React.Component {
   }
 }
 
-Product.defaultProps = {};
+Product.defaultProps = {
+  match: {}
+};
 
-Product.propTypes = {};
+Product.propTypes = {
+  match: PropTypes.shape({
+    isExact: PropTypes.bool,
+    params: PropTypes.object,
+    path: PropTypes.string
+  })
+};
 
 export default Product;

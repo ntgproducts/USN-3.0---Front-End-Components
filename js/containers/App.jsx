@@ -41,6 +41,8 @@ const App = () => (
           <AsyncRoute props={props} loadingPromise={import('./Category')} />} />
         <Route exact path="/product-example" component={props =>
           <AsyncRoute props={props} loadingPromise={import('./Product')} />} />
+        <Route exact path="/:cat/:product/:code" component={ props => 
+          <AsyncRoute props={props} loadingPromise={import('./Product')} />} />
       </div>
   </Provider>
 );
