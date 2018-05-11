@@ -2,18 +2,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Airtable from 'airtable';
-import ImageGrid from '../components/product/ImageGrid';
+// import ImageGrid from '../components/product/ImageGrid';
 import EnhancedCalc from '../components/calcs/Calculator-Square-Foot';
-import TabLayout from '../components/product/TabLayout';
-import TabData from '../data/mockTabData';
+import Tabs from '../components/Tabs';
 import '../../style/product.styl';
+import Accordion from '../components/Accordion';
+import { lowerShortenRemoveSpaces } from '../utils/utils';
 
-const data = [
-  { name: 'Example', url: '#', mediaType: 'image' },
-  { name: 'Example1', url: '#', mediaType: 'image' },
-  { name: 'Example2', url: '#', mediaType: 'image' }
-]
 class Product extends React.Component {
+  
   constructor(props) {
     super(props);
     this.state = {};
@@ -35,46 +32,88 @@ class Product extends React.Component {
           price: record.get('MSRP'),
           description: record.get('Product Description'),
           included: record.get('Included'),
-          slug: record.get('Slug')
+          slug: record.get('Slug'),
+          features: record.get('Features'),
+          benefits: record.get('Benefits'),
+          name: record.get('Product Name')
         };
-        
       });
       this.setState({product});
     }, (err) => {
       if(err) console.error(err);
     });
-
   }
-
- 
 
   render() {
     return (
-      <div className="product-container container">
-        <div className="row">
-          {this.state.product && 
-            <h1>{this.state.product.code}</h1>
-          }
-          <div className="column column-6">
-            <ImageGrid media={data} />
+      <div>
+        {this.state.product &&
+          <div className="product-container container">
+            <div className="row">
+              <div className="column column-12">
+                <h1>{this.state.product.name}</h1>
+                <p>
+                  <span className="single-product product-code">{this.state.product.code}</span> -  
+                  <span className="single-product product-price"> ${this.state.product.price}</span>
+                </p>
+                <div className="single-product image-gallery">
+                  <div className="image-gallery inner-gallery-wrapper">
+                    <img src="#" style={{
+                      backgroundColor: "#fff",
+                      width: "100%",
+                      height: "300px",
+                      borderRadius: "5px",
+                      display: "block"
+                    }} alt="Product"/>
+                  </div>
+                </div>
+              </div>
+              { /* <div className="column column-12">
+                <ImageGrid media={data} />
+              </div> */ }
+              <div className="column column-6">
+                <EnhancedCalc />
+                {this.state.message && 
+                  <div className="alert-msg-box">
+                    {this.state.message}
+                  </div>
+                }
+                <p><b>Product Description:</b></p>
+                <p>{this.state.product.description}</p>
+                <Accordion>
+                  <Accordion.Button title="Expand Me Please" />
+                  <Accordion.Expanded>Hello</Accordion.Expanded>
+                </Accordion>
+              </div>
+            </div>
+            {this.state.product.features && 
+              <div className="row">
+                <h2>Features:</h2>
+                {this.state.product.features.split(';').map((feature) => (
+
+                <div key={lowerShortenRemoveSpaces(feature, 9)} className="feature">
+                    <span className="feature-icon" />
+                    <p>{feature}</p>
+                  </div>
+                ))}
+              </div>
+            }
+            <div className="row">
+              <Tabs activeTab="Yo">
+                <Tabs.Tab title="Click Me">
+                  Something
+                </Tabs.Tab>
+                <Tabs.Tab title="Click Me 2">
+                  Something Else
+                </Tabs.Tab>
+                <Tabs.Tab title="Click Me 3">
+                  Something More
+                </Tabs.Tab>
+              </Tabs>
+            </div>
           </div>
-          <div className="column column-6">
-            <EnhancedCalc />
-            <p>Value proposition here with some basic text paragraphing. To let you know whats up with this product.</p>
-            <h2>Features:</h2>
-            <ul>
-              <li>Example Feature</li>
-              <li>Example Feature</li>
-              <li>Example Feature</li>
-              <li>Example Feature</li>
-            </ul>
-          </div>
+        }
         </div>
-        <div className="row">
-          <TabLayout tabs={TabData} />
-          
-        </div>
-      </div>
     )
   }
 }

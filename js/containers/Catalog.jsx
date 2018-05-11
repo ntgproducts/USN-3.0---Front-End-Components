@@ -1,7 +1,7 @@
 import React from 'react';
 import Airtable from 'airtable';
 import ProductGrid from '../components/catalog/ProductGrid';
-import Sidebar from '../components/catalog/Sidebar';
+import CatalogToolBar from '../components/catalog/CatalogToolBar';
 import Spinner from '../utils/Spinner';
 
 class Catalog extends React.Component {  
@@ -65,7 +65,7 @@ class Catalog extends React.Component {
         {this.state.error && 
           <h2>{this.state.error}</h2>
         }
-        <Sidebar />
+        <CatalogToolBar />
         { this.state.isLoaded ?   (
           <ProductGrid products={this.state.products} /> 
           ) : (

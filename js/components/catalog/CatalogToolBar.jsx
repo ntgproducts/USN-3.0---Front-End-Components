@@ -1,19 +1,19 @@
 import React from 'react';
 // Make Responsive, Collapse on Mobile sizings
 
-const Sidebar = () => (
+const CatalogToolBar = () => (
 
-  <div className="container sidebar-container">
-    <div className="sidebar filter-sidebar">
+  <div className="container toolbar-container">
+    <div className="catalog-toolbar">
       <header className="sr-only">
-        <p>Filter Product Controls</p>
+        <p>Sort Product Controls</p>
       </header>
       <div className="sidebar-content">
         <div className="row">
           <div className="column column-67">
             <div className="navigation sub-navigation">
               <ul className="navigation-links">
-                <li>Filter by: </li>
+                <li>Sort by: </li>
                 <li><a href="#name">Product Name</a></li>
                 <li><a href="#price">Price</a></li>
                 <li><a href="#size">Size</a></li>
@@ -35,4 +35,4 @@ const Sidebar = () => (
 
 );
 
-export default Sidebar;
+export default CatalogToolBar;

@@ -11,7 +11,8 @@ class MainAppLanding extends React.Component {
       <div className="container">
         <h1>Main Component List</h1>
         <h3>Sub Navigation Bar</h3>
-        <SubNav />        
+        <SubNav />
+        
       </div>
     )
   }
